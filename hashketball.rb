@@ -1,4 +1,6 @@
 # Write your code below game_hash
+require "pry"
+
 def game_hash
   {
     home: {
@@ -143,17 +145,17 @@ def shoe_size(name)
       if player[:player_name] == name
         return player[:shoe]
       end
-    end
+    end 
   end
-end
+end 
 
 def team_colors(team_name)
   game_hash.each do |k,v|
     if v[:team_name] == team_name
-      return v[:colors]
+    return v[:colors]
     end
-  end
-end
+  end 
+end 
 
 def team_names
   return game_hash.map { |k,v| v[:team_name] }
@@ -162,10 +164,10 @@ end
 def player_numbers(team_name)
   game_hash.each do |k,v|
     if v[:team_name] == team_name
-      return v[:players].map { |h| h[:number] }
-    end
-  end
-end
+      return v[:players].map {|h| h[:number]}
+    end 
+  end 
+end 
 
 def player_stats(player_name)
   game_hash.each do |k,v|
@@ -188,6 +190,8 @@ def big_shoe_rebounds
       end
     end
   end
-  
   player_stats(name)[:rebounds]
 end
+
+
+ 
